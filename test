@@ -1,0 +1,166 @@
+1.bai tap thuc hanh note2 (1)
+
+
+create  database my_classicmodels;
+use my_classicmodels;
+create table orders(
+ordernumber int(11) primary key,
+orderdate datetime not null,
+requiredd datetime not null,
+shippeddate datetime not null,
+status varchar(15) not null,
+comments text not null,
+customernumber int(11) not null
+);
+
+create table orderdetails(
+productcode varchar(15) primary key,
+quantityordered int (11) not null,
+priceeach double not null,
+orderlinenumber smallint(6) not null,
+ordernumber int(11),
+FOREIGN KEY (ordernumber) REFERENCES orders(ordernumber)
+ON UPDATE CASCADE,
+FOREIGN KEY (productcode) REFERENCES products(productcode)
+ON UPDATE CASCADE
+);
+
+
+CREATE TABLE productlines (
+    productline VARCHAR(50) PRIMARY KEY,
+    textdescription TEXT,
+    htmldescription TEXT,
+    image BLOB
+);
+
+create table products(
+ productcode varchar(15) primary key,
+ productname varchar(70) not null,
+ productline varchar(50),
+ productscale varchar(10) not null,
+ productvendor varchar(50) not null,
+ productdescription text not null,
+ quantityinstock smallint(6 )not null,
+ buyprice double not null,
+ FOREIGN KEY (productline) REFERENCES productlines(productline)
+  ON UPDATE CASCADE
+ );
+2 .baitap lap2
+Bài 1: Tạo ra 3 bảng cho CSDL_thuchanh;
+- Tạo 3 bảng với tiếng Việt không dấu, Ví dụ: SinhVien
+- Tạo 3 bảng đầy đủ tiếng Việt. Ví dụ: Sinh_Viên;
+create database CSDL_THUCHANH;
+use CSDL_THUCHANH;
+create table sinhvien(
+masv int,
+tensv varchar(20),
+hosv varchar(10),
+ngaysinh datetime,
+gioitinh varchar(3),
+tinh varchar(30),
+huyen varchar(30),
+xa varchar(30),
+sodienthoai varchar(30), 
+malophoc varchar(10));
+
+create table monhoc(
+mamonhoc varchar(10),
+tenmonhoc varchar(10),
+sotinchi smallint);
+
+create table lophoc(
+malophoc varchar(11),
+tenlophoc varchar(11),
+khoa varchar(10));
+
+- Tạo 3 bảng đầy đủ tiếng Việt. Ví dụ: Sinh_Viên;
+create table sinh_vien(
+ma_sinh_vien int,
+ten_sinh_vien varchar(20),
+ho_sinh_vien varchar(10),
+ngay_sinh datetime,
+gioi_tinh varchar(3),
+tinh varchar(30),
+huyen varchar(30),
+xa varchar(30),
+so_dien_thoai varchar(30), 
+ma_lop_hoc varchar(10));
+create table monhoc(
+ma_mon_hoc varchar(10),
+ten_mon_hoc varchar(10),
+sotinchi smallint);
+create table lophoc(
+ma_lop_hoc varchar(11),
+ten_lop_hoc varchar(11),
+khoa varchar(10));
+
+2.1 Thêm các ràng buộc khóa chính vào 3 bảng
+- Mamonhoc: là khóa chính của bảng monhoc
+SELECT * FROM csdl_thuchanh.monhoc;
+alter table monhoc
+add primary key (mamonhoc)
+
+2.1 Thêm các ràng buộc khóa chính vào 3 bảng
+- Malophoc: là khóa chính của bảng lophoc
+alter table lophoc
+add primary key (malophoc);
+
+2.2 Trong bảng LopHoc, thêm một cột tên là Tên quản lý lớp (TenQLL) kiểu char.
+SELECT * FROM csdl_thuchanh.lophoc;
+alter table lophoc
+add TLL varchar(15);
+
+
+2.1 Thêm các ràng buộc khóa chính vào 3 bảng
+- MaSinhVien: là khóa chính của bảng sihvien
+alter table sinhvien
+add primary key (masv);
+SELECT * FROM csdl_thuchanh.sinhvien;
+
+2.3 Sửa miền giá trị (char) của cột SoDienThoai của bảng SinhVien thành int(11)
+alter table sinhvien
+modify sodienthoai int(11);
+
+
+2.4 Xóa hết các bảng
+drop tables sinhvien;
+drop tables lophoc;
+drop tables monhoc;
+
+2.5 Tạo lại các bảng với các ràng buộc được khai báo trong quá trình tạo 3 bảng? Có lỗi 
+gì không, Tại sao?
+create table sinhvien(
+masv int primary key,
+tensv varchar(15) not null,
+hosv varchar(15) not null,
+ngaysinh datetime not null,
+gioitinh varchar(3) not null,
+tinh varchar(30) not null,
+huyen varchar(30) not null,
+xa varchar(30) not null,
+sodienthoai int(11) not null, 
+malophoc varchar(50) not null);
+
+create table monhoc(
+mamonhoc varchar(50) primary key ,
+tenmonhoc varchar(50) not null,
+sotinchi smallint not null); 
+
+create table lophoc(
+malophoc varchar(50) primary key,
+tenlophoc varchar(50) not null,
+khoa varchar(50) not null,
+tenquanly varchar(50) not null,
+maquanly varchar(50));
+
+
+trong quá trình thực hiện không gây ra lỗi bởi tất cả các bảng cũ đã bị xóa và các dữ kiện trong bài hoàn toàn hợp lệ.
+
+
+2.6 Thêm dữ liệu vào 3 bảng. 
+- Xem trong file excel CSDL_SV
+SELECT * FROM csdl_thuchanh.lophoc;
+insert into lophoc (malophoc,tenlophoc,khoa,maquanly,tenquanly)
+ values('K11CNTT','Lớp K11 công nghệ thông tin','Công Nghệ thông tin','PU0100','Nguyễn Văn Quyến');
+ values('k11tdh','Lớp K11 Tự động hóa	Điều khiển tự động','khiển tự động','PU0100','Nguyễn Quang Hải');
+ values('K11NNA ','Lớp K11 Ngôn ngữ Anh','Ngôn ngữ Anh','PU0456','Nguyễn Hoàng Đức');
