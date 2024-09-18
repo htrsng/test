@@ -1,0 +1,345 @@
+a{
+    text-decoration: none;
+    color: initial; 
+}
+
+/* header */
+#header>.tieude{
+    
+    background-color: rgb(234, 240, 244);
+}
+.tieude > .chu{
+    position: relative;
+    left:180px;
+    font-size: 50px;
+    font-weight:bolder;
+    color: rgb(4, 109, 214);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.tieude > .link{
+    position: relative;
+    left: 550px;
+    bottom: 15px;
+    color: rgb(17, 171, 191);
+}
+#header > .phancon{
+    width: auto;
+    height: 45px;
+    background-color: rgb(12, 84, 216);
+   display: flex;
+   align-content: space-around;
+   gap: 50px;
+   
+}
+.classcon1{
+    position: relative;
+    left:180px;
+    bottom: 30px;
+ }
+.classcon2{
+   position: relative;
+   left:280px;
+   bottom: 30px;
+}
+.classcon3{
+    position: relative;
+    left:350px;
+    bottom: 30px;  
+ }
+ .classcon4{
+    position: relative;
+    left:430px;
+    bottom: 30px;
+ }
+ .classcon5{
+    position: relative;
+    left:500px;
+    bottom: 30px; 
+ }
+ .classcon1,.classcon2,.classcon3,.classcon4,.classcon5{
+    color: #fff; 
+    font-size: 16px; 
+ }
+   .classgach{
+    position: relative;
+    left:50px; 
+ }
+
+/* content */
+
+
+.content-first{
+    
+    margin: 10px 180px;  
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* .news-flash -tin mới nhất */
+
+.content-first > .news-flash{
+    width: 480px;
+    height: 428px; 
+}
+
+.news-flash > .tinmoinhat{
+    padding: 8px  20px;
+    height: 15px;
+    width: 130px;
+    background-color: rgb(146, 200, 244);
+    border-radius: 10px ;
+    color: rgb(13, 87, 205);
+    font-weight: bold;
+}
+
+.cham {
+    display:inline-block; 
+    position: relative;
+    left:150px;
+    height: 20px;
+    width: 20px;
+    background-color: rgba(222, 221, 221, 0.962);
+    border-radius: 100px;
+    padding: 2px;
+    text-align: center;
+}
+.img-new-flash{
+    height: 300px;
+    width: 470px;
+    position: relative;
+    top:10px;
+}
+.tdnoidung{
+    position: relative;
+    top:15px;
+    color: rgb(35, 147, 233);
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+.noidung{
+    position: relative;
+    top:15px;
+    font-size: 15px;
+    color: rgb(95, 94, 94);
+}
+/* .breaking-news - tin nóng */
+
+.content-first > .breaking-news{
+    width: 230px;
+    height: 428px;
+    
+}
+.tinnong{
+    border: solid;
+    border-top-left-radius:15px ;
+    border-top-right-radius:15px ;
+    color:#fff;
+    background-color:rgb(25, 74, 200);
+    font-size: 17px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 10px;
+    padding: 8px;
+}
+.breaking-news div {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 5px;
+}
+
+.breaking-news {
+    display: flex;
+    flex-direction: column;
+}
+.img-tinnong{
+    width: 80px;
+    height: 50px;  
+    margin-right: 10px;
+}
+.noidung-tinnong {
+    flex: 1;
+    font-size: 14px;
+    color: rgb(95, 94, 94);
+}
+.gach-tinnong{
+    color: rgb(147, 146, 146);
+}
+
+/* question - câu hỏi */
+.content-first > .question{
+    width: 330px;
+    height: 428px;
+    display: flex;
+    flex-direction: column;
+    gap:18px;
+
+}
+
+/* Thăm dò */
+.question > .thamdo{
+    width: 330px;
+    height: 200px;
+    border-top-style:solid;
+    border-color: rgb(58, 117, 246);
+    background-color:  rgb(236, 236, 238);
+
+
+}
+.td-thamdo{
+    padding:5px 45px ;
+    color: rgb(8, 138, 244);
+    font-weight: bold;
+}
+.question1{
+    width: 270px;
+    height: 160px;
+    background-color: #fff;
+    position: relative;
+    left:40px;
+    padding: 5px; /* Thêm khoảng cách giữa chữ và khung */
+    box-sizing: border-box; 
+}
+.luachon{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 10px; 
+}
+.luu{
+    position: relative;
+    top:18px;
+    left:50px;
+}
+.luu input[type="submit"] {
+    font-size: 15px; 
+    padding: 5px 15px; /* Tăng kích thước ô */
+    margin-right: 20px; /* Tạo khoảng cách giữa các nút */
+    color: #fff;
+    font-weight: bold;
+    border: none;
+}
+/* liên kết */
+
+.question > .lienket{
+   
+    border-top-style:solid;
+    border-color: rgb(58, 117, 246);
+    background-color:  rgb(236, 236, 238);
+
+}
+
+.td-lienket{
+    padding:5px 45px ;
+    color: rgb(8, 138, 244);
+    font-weight: bold; 
+}
+
+li{
+    padding:5px;
+}
+/* .content-second - nội dung 2 */
+.content-second{
+    height: 270px;
+    margin: 10px 180px; 
+    background-color: rgb(217, 226, 238); 
+    border-radius: 10px;
+}
+.content-second >.content-second1{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+ .box1,.box2,.box3,.box4,.box5 {
+    width: 300px;
+    height: 240px;
+}
+
+.td-content2{
+   padding: 10px;
+   color: rgb(89, 139, 225);
+}
+
+.anh-content2{
+    width: 180px;
+    height: 120px;
+    padding-left: 13px;
+}
+.nd-content2{
+    font-size: 15px;
+    padding:8px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:550;
+}
+
+/* nội dung 3 */
+.content-third{
+    width: auto;
+    height: 350px;
+   
+    margin: 10px 180px; 
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.o1,.o2,.o3{
+    width: 360px;
+    height: 350px;
+    
+   
+} 
+.td-content3{
+    width: 350px;
+    height: 35px;
+    background-color:rgb(241, 240, 238);
+    padding-left: 35px;
+    padding-top: 8px;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    color: rgb(116, 148, 245);
+    font-weight: bold;
+}
+.anh-content3{
+    width: 350px;
+    height: 150px;
+    position: relative;
+    top:8px;
+}
+.td-nd-content3{
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    top: 10px;
+}
+.gach-content3{
+    list-style-type: none;
+    position: relative;
+   
+}
+.content-third ul{
+    position: relative;
+    left: -25px;
+}
+
+.nd-content3{
+    position: relative;
+    top:-10px;
+}
+/* footer */
+.footer{
+        position: relative;
+        top:50px;
+        width: auto;
+        height: 100px;
+        background-color: rgb(233, 242, 247);
+    }
+    .hopcon-footer{
+        width: auto;
+        height: 40px;
+        background-color: rgb(12, 84, 216);
+    }
+
+
